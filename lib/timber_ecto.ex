@@ -126,5 +126,5 @@ defmodule Timber.Ecto do
   defp resolve_query(_q, _entry), do: {:error, :no_query}
 
   defp config, do: Elixir.Application.get_env(:timber_ecto, __MODULE__, [])
-  defp get_query_time_ms_threshold, do: Keyword.get(config(), :query_time_ms_threshold, 0)
+  defp get_query_time_ms_threshold, do: Keyword.get(config(), :query_time_ms_threshold, 1000)
 end
